@@ -14,13 +14,26 @@ class SmallButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 0.5),
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 2.0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 4.0, // soften the shadow
+            spreadRadius: 4.0, //extend the shadow
+            offset: Offset(
+              0.0, // Move to right 10  horizontally
+              10.0, // Move to bottom 10 Vertically
+            ),
+          )
+        ],
+      ),
       child: ElevatedButton(
         style: ButtonStyle(
-          elevation: MaterialStateProperty.all<double>(10.0),
           minimumSize: MaterialStateProperty.all<Size>(
-            Size(40.0, 45.0),
+            Size(40.0, 50.0),
           ),
           backgroundColor: MaterialStateProperty.resolveWith<Color>(
             (Set<MaterialState> states) {

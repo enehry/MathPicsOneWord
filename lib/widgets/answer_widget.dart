@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:four_pics_one_word/providers/audio_player_provider.dart';
 import 'package:four_pics_one_word/providers/game_screen_provider.dart';
 import 'package:four_pics_one_word/question_bank.dart';
 import 'package:four_pics_one_word/widgets/dialog_widget.dart';
@@ -6,14 +7,10 @@ import 'package:four_pics_one_word/widgets/small_button_widget.dart';
 import 'package:provider/provider.dart';
 
 class AnswerWidget extends StatelessWidget {
-  const AnswerWidget({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(30.0),
+      padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 30.0),
       child: Consumer<GameScreenProvider>(builder: (context, provider, widget) {
         List<String> choice = provider.choices;
         List<String> userAnswer = provider.userAnswer;
@@ -27,7 +24,8 @@ class AnswerWidget extends StatelessWidget {
           children: [
             for (int i = 0; i < (answer.length / 8).ceil(); i++)
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   for (int j = i == 0 ? 0 : 8;
                       j < ((i == 0) ? ansLength : answer.length);
@@ -46,7 +44,8 @@ class AnswerWidget extends StatelessWidget {
             ),
             for (int i = 0; i < (choice.length / 8).ceil(); i++)
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   for (int j = (i == 0) ? 0 : 8;
                       j < ((i == 0) ? choiceLength : choice.length);
@@ -58,6 +57,9 @@ class AnswerWidget extends StatelessWidget {
                         provider.addAnswer(j);
                         if (provider.stage < questions.length) {
                           if (provider.correct) {
+                            context
+                                .read<AudioPlayerProvider>()
+                                .playSound('assets/sounds/coin.wav');
                             showDialog(
                               barrierDismissible: false,
                               context: context,
@@ -68,6 +70,20 @@ class AnswerWidget extends StatelessWidget {
                                 onPressed: () {
                                   Navigator.pop(context);
                                   provider.resetCorrect();
+                                },
+                              ),
+                            );
+                          } else if (provider.isWrong) {
+                            showDialog(
+                              barrierDismissible: false,
+                              context: context,
+                              builder: (builder) => DialogWidget(
+                                title: 'WRONG',
+                                text: 'Your answer is wrong try again!',
+                                image: 'assets/icons/warn.svg',
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  provider.isWrong = false;
                                 },
                               ),
                             );

@@ -26,6 +26,9 @@ class FourPicOneWordProviders extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => ThemeProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => AudioPlayerProvider(),
+        ),
       ],
       child: FourPicsOneWord(),
     );

@@ -1,7 +1,6 @@
 import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
-import 'package:four_pics_one_word/providers/audio_player_provider.dart';
+import 'package:flutter/services.dart';
 import 'package:four_pics_one_word/question.dart';
 import 'package:four_pics_one_word/question_bank.dart';
 import 'package:four_pics_one_word/services/storage_util.dart';
@@ -14,6 +13,7 @@ class GameScreenProvider extends ChangeNotifier {
   int _coins = 0;
   int _stage = 0;
   bool isFinish = false;
+  bool isWrong = false;
 
   GameScreenProvider() {
     _stage = getStageFromStorage();
@@ -41,19 +41,23 @@ class GameScreenProvider extends ChangeNotifier {
   }
 
   void answerChecker() {
-    if (_answer!.join() == userAnswer.join()) {
-      _correct = true;
-      print("Correct");
-      userAnswer = [];
-      int stage = getStageFromStorage() + 1;
-      int coins = getCoinsFromStorage() + 20;
-      print(StorageUtil.putInt('stage', stage));
-      print(StorageUtil.putInt('coins', coins));
-      _stage = getStageFromStorage();
-      _coins = getCoinsFromStorage();
-      setQuestion(_stage);
-      print(_stage);
-      AudioPlayerProvider.playCoins();
+    if (_answer!.length == userAnswer.length) {
+      if (_answer!.join() == userAnswer.join()) {
+        _correct = true;
+        print("Correct");
+        userAnswer = [];
+        int stage = getStageFromStorage() + 1;
+        int coins = getCoinsFromStorage() + 20;
+        print(StorageUtil.putInt('stage', stage));
+        print(StorageUtil.putInt('coins', coins));
+        _stage = getStageFromStorage();
+        _coins = getCoinsFromStorage();
+        setQuestion(_stage);
+        print(_stage);
+      } else {
+        HapticFeedback.mediumImpact();
+        isWrong = true;
+      }
     }
   }
 

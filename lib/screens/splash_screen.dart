@@ -25,24 +25,29 @@ class _SplashScreenState extends State<SplashScreen>
     super.dispose();
     _controller.dispose();
   }
- @override
+
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    AudioPlayerProvider.playLoad();
+    context.read<AudioPlayerProvider>().playSound('assets/sounds/load.wav');
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: ScaleTransition(
           scale: _animation,
-          child: ConstrainedBox(
-              constraints: BoxConstraints(
-                maxHeight: 180.0,
-                maxWidth: 180.0,
-              ),
-              child: SvgPicture.asset('assets/icons/logo.svg')),
+          child: Hero(
+            tag: 'logo',
+            child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxHeight: 180.0,
+                  maxWidth: 180.0,
+                ),
+                child: SvgPicture.asset('assets/icons/logo.svg')),
+          ),
         ),
       ),
     );

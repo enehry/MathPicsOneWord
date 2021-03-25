@@ -24,6 +24,15 @@ class StorageUtil {
     return _preferences?.getInt(key) ?? defValue;
   }
 
+  static double getVolume(String key, {double defValue = 1.0}) {
+    if (_preferences == null) return defValue;
+    return _preferences?.getDouble(key) ?? defValue;
+  }
+
+  static Future<bool> putVolume(String key, double value) {
+    return _preferences!.setDouble(key, value);
+  }
+
   // put string
   static Future<bool> putInt(String key, int value) {
     return _preferences!.setInt(key, value);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:four_pics_one_word/providers/audio_player_provider.dart';
 import 'package:four_pics_one_word/providers/theme_provider.dart';
 import 'package:four_pics_one_word/widgets/long_button_wdiget.dart';
 import 'package:provider/provider.dart';
@@ -26,9 +27,13 @@ class SettingsScreen extends StatelessWidget {
               height: 30.0,
             ),
             LongButtonWidget(
-              onPressed: () {},
+              onPressed: () {
+                context.read<AudioPlayerProvider>().soundSet();
+              },
               title: 'SOUND',
-              subtitle: 'OFF',
+              subtitle: context.watch<AudioPlayerProvider>().volume == 0
+                  ? 'OFF'
+                  : 'ON',
             ),
           ],
         ),

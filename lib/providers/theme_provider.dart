@@ -31,8 +31,10 @@ class ThemeProvider with ChangeNotifier {
         textTheme: TextTheme(
           headline1: TextStyle(
             fontSize: 24.0,
-            color: Color(0xFFE0E0E0),
+            color: Color(0xFFE0E0E0).withOpacity(0.9),
             fontFamily: 'RobotoSlab',
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2.0,
           ),
           headline2: TextStyle(
             fontSize: 24.0,
@@ -42,14 +44,13 @@ class ThemeProvider with ChangeNotifier {
           bodyText1: TextStyle(
             fontSize: 14.0,
             color: Color(0xFFE0E0E0),
-            fontWeight: FontWeight.w300,
+            fontWeight: FontWeight.w500,
             fontFamily: 'RobotoSlab',
           ),
           bodyText2: TextStyle(
-            fontSize: 16.0,
+            fontSize: 18.0,
             color: Color(0xFFE0E0E0),
-            fontWeight: FontWeight.w500,
-            fontFamily: 'RobotoSlab',
+            fontWeight: FontWeight.bold,
           ),
         ),
       );
@@ -63,8 +64,10 @@ class ThemeProvider with ChangeNotifier {
         textTheme: TextTheme(
           headline1: TextStyle(
             fontSize: 24.0,
-            color: Color(0xFF283F3B),
+            color: Color(0xFF283F3B).withOpacity(0.9),
             fontFamily: 'RobotoSlab',
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2.0,
           ),
           headline2: TextStyle(
             fontSize: 24.0,
@@ -74,14 +77,13 @@ class ThemeProvider with ChangeNotifier {
           bodyText1: TextStyle(
             fontSize: 14.0,
             color: Colors.white,
-            fontWeight: FontWeight.w300,
+            fontWeight: FontWeight.w500,
             fontFamily: 'RobotoSlab',
           ),
           bodyText2: TextStyle(
-            fontSize: 16.0,
+            fontSize: 18.0,
             color: Color(0xFF283F3B),
-            fontWeight: FontWeight.w500,
-            fontFamily: 'RobotoSlab',
+            fontWeight: FontWeight.bold,
           ),
         ),
       );
