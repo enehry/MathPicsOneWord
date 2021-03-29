@@ -61,7 +61,7 @@ class GameScreen extends StatelessWidget {
                                     context: context,
                                     builder: (builder) => DialogWidget(
                                       title: 'MESSAGE',
-                                      text: 'MAY BAYAD ANG HINT NA 20 COINS',
+                                      text: 'You don\'t have not enough coins',
                                       image: 'assets/icons/warn.svg',
                                       onPressed: () {
                                         Navigator.pop(context);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:animated_button/animated_button.dart';
 
 class LongButtonWidget extends StatelessWidget {
   const LongButtonWidget({
@@ -16,7 +17,7 @@ class LongButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5.0),
+        borderRadius: BorderRadius.circular(30.0),
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
@@ -29,41 +30,25 @@ class LongButtonWidget extends StatelessWidget {
           )
         ],
       ),
-      child: ElevatedButton(
-        style: ButtonStyle(
-          minimumSize: MaterialStateProperty.all<Size>(Size(240.0, 70.0)),
-          backgroundColor: MaterialStateProperty.resolveWith<Color>(
-            (Set<MaterialState> states) {
-              if (states.contains(MaterialState.pressed))
-                return Theme.of(context).buttonColor.withOpacity(0.5);
-              return Theme.of(context)
-                  .buttonColor; // Use the component's default.
-            },
-          ),
-        ),
-        onPressed: onPressed as void Function()?,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: 260.0,
+      child: AnimatedButton(
+        width: 250.0,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              title,
+              style: Theme.of(context).textTheme.headline1,
             ),
-            child: Column(
-              children: [
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.headline1,
-                ),
-                subtitle == null
-                    ? Container()
-                    : Text(
-                        subtitle!,
-                        style: Theme.of(context).textTheme.bodyText2,
-                      ),
-              ],
-            ),
-          ),
+            subtitle == null
+                ? Container()
+                : Text(
+                    subtitle!,
+                    style: Theme.of(context).textTheme.bodyText2,
+                  ),
+          ],
         ),
+        color: Theme.of(context).buttonColor,
+        onPressed: onPressed as void Function(),
       ),
     );
   }

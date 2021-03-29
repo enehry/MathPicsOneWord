@@ -9,5 +9,23 @@ List<Question> questions = [
   ),
   Question(
     answer: "TURTLE".split(''),
-  )
+  ),
+  Question(
+    answer: "WALANG BEBE".split(''),
+  ),
+  Question(
+    answer: "KULOT".split(''),
+  ),
+  Question(
+    answer: "BEBE NI OKKEN".split(''),
+  ),
+  Question(
+    answer: "BEST SUPPORT".split(''),
+  ),
+  Question(
+    answer: "SHADOW NIGGA".split(''),
+  ),
+  Question(
+    answer: "DINOGTAG".split(''),
+  ),
 ];

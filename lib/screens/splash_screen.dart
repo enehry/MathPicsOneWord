@@ -28,7 +28,6 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     context.read<AudioPlayerProvider>().playSound('assets/sounds/load.wav');
   }
@@ -39,15 +38,12 @@ class _SplashScreenState extends State<SplashScreen>
       body: Center(
         child: ScaleTransition(
           scale: _animation,
-          child: Hero(
-            tag: 'logo',
-            child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  maxHeight: 180.0,
-                  maxWidth: 180.0,
-                ),
-                child: SvgPicture.asset('assets/icons/logo.svg')),
-          ),
+          child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: 180.0,
+                maxWidth: 180.0,
+              ),
+              child: SvgPicture.asset('assets/icons/logo.svg')),
         ),
       ),
     );

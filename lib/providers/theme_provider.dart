@@ -23,7 +23,7 @@ class ThemeProvider with ChangeNotifier {
   }
 
   ThemeData darkTheme() => ThemeData(
-        buttonColor: Color(0xFF2D2D2D),
+        buttonColor: Color(0xFF333333),
         scaffoldBackgroundColor: Color(0xFF3D3D3D),
         primaryColor: Color(0xFF2D2D2D),
         accentColor: Color(0xFF2D2D2D),

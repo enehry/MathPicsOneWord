@@ -40,6 +40,8 @@ class GameScreenProvider extends ChangeNotifier {
     }
   }
 
+
+
   void answerChecker() {
     if (_answer!.length == userAnswer.length) {
       if (_answer!.join() == userAnswer.join()) {
@@ -93,7 +95,9 @@ class GameScreenProvider extends ChangeNotifier {
   void clearData() async {
     _coins = 0;
     _stage = 0;
+    _correct = false;
     isFinish = false;
+
     setQuestion(0);
     await StorageUtil.clrData();
     notifyListeners();

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:animated_button/animated_button.dart';
+import 'package:four_pics_one_word/providers/audio_player_provider.dart';
+import 'package:provider/provider.dart';
 
 class SmallButtonWidget extends StatelessWidget {
   const SmallButtonWidget({
@@ -15,9 +18,9 @@ class SmallButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 2.0),
+      padding: EdgeInsets.symmetric(horizontal: 2.0, vertical: 3.0),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5.0),
+        borderRadius: BorderRadius.circular(30.0),
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
@@ -30,24 +33,18 @@ class SmallButtonWidget extends StatelessWidget {
           )
         ],
       ),
-      child: ElevatedButton(
-        style: ButtonStyle(
-          minimumSize: MaterialStateProperty.all<Size>(
-            Size(40.0, 50.0),
-          ),
-          backgroundColor: MaterialStateProperty.resolveWith<Color>(
-            (Set<MaterialState> states) {
-              if (states.contains(MaterialState.pressed))
-                return color.withOpacity(0.5);
-              return color; // Use the component's default.
-            },
-          ),
-        ),
-        onPressed: onPressed as void Function()?,
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.bodyText2,
-        ),
+      child: AnimatedButton(
+        shape: BoxShape.rectangle,
+        width: 45.0,
+        height: 45.0,
+        color: color,
+        child: Text(title, style: Theme.of(context).textTheme.bodyText2),
+        onPressed: () {
+          context
+              .read<AudioPlayerProvider>()
+              .playSound('assets/sounds/click.wav');
+          onPressed();
+        },
       ),
     );
   }

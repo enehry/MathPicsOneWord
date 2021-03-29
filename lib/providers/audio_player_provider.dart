@@ -13,8 +13,11 @@ class AudioPlayerProvider with ChangeNotifier {
 
   void playSound(String asset) async {
     if (_volume > 0) {
+      if (_player.playing) {
+        _player.stop();
+      }
       await _player.setAsset(asset);
-      _player.play();
+      await _player.play();
     }
   }
 

@@ -10,7 +10,6 @@ class AnswerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 30.0),
       child: Consumer<GameScreenProvider>(builder: (context, provider, widget) {
         List<String> choice = provider.choices;
         List<String> userAnswer = provider.userAnswer;
@@ -65,7 +64,7 @@ class AnswerWidget extends StatelessWidget {
                               context: context,
                               builder: (builder) => DialogWidget(
                                 title: 'CORRECT',
-                                text: 'You Guess It Right + 20 Coins',
+                                text: '+20 COINS \n You guess it Right',
                                 image: 'assets/icons/coin.svg',
                                 onPressed: () {
                                   Navigator.pop(context);
@@ -74,6 +73,9 @@ class AnswerWidget extends StatelessWidget {
                               ),
                             );
                           } else if (provider.isWrong) {
+                            context
+                                .read<AudioPlayerProvider>()
+                                .playSound('assets/sounds/error.wav');
                             showDialog(
                               barrierDismissible: false,
                               context: context,

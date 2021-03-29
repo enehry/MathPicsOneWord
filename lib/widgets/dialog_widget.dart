@@ -53,7 +53,7 @@ class DialogWidget extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline2,
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
                 Text(
                   text,
@@ -61,7 +61,7 @@ class DialogWidget extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
