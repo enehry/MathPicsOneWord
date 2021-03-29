@@ -13,29 +13,29 @@ class AnswerWidget extends StatelessWidget {
       child: Consumer<GameScreenProvider>(builder: (context, provider, widget) {
         List<String> choice = provider.choices;
         List<String> userAnswer = provider.userAnswer;
-        List<String> answer = provider.answer!;
+        List<String>? answer = provider.answer!;
 
-        int ansLength = (answer.length <= 8) ? answer.length : 8;
+        int ansLength = (userAnswer.length <= 8) ? userAnswer.length : 8;
 
         int choiceLength = (choice.length <= 8) ? choice.length : 8;
 
         return Column(
           children: [
-            for (int i = 0; i < (answer.length / 8).ceil(); i++)
+            for (int i = 0; i < (userAnswer.length / 8).ceil(); i++)
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   for (int j = i == 0 ? 0 : 8;
-                      j < ((i == 0) ? ansLength : answer.length);
+                      j < ((i == 0) ? ansLength : userAnswer.length);
                       j++)
                     SmallButtonWidget(
-                      title: userAnswer.length > j ? userAnswer[j] : " ",
+                      title: userAnswer[j],
                       color: Theme.of(context).accentColor,
                       onPressed: () {
                         provider.removeAnswer(j);
                       },
-                    ),
+                    )
                 ],
               ),
             SizedBox(

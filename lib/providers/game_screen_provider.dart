@@ -7,7 +7,7 @@ import 'package:four_pics_one_word/services/storage_util.dart';
 
 class GameScreenProvider extends ChangeNotifier {
   List<String>? _answer = [];
-  List<String> userAnswer = [];
+  late List<String> userAnswer;
   List<String> choices = [];
   bool _correct = false;
   int _coins = 0;
@@ -30,8 +30,11 @@ class GameScreenProvider extends ChangeNotifier {
   int get coins => _coins;
 
   void addAnswer(int index) {
-    if (userAnswer.length < _answer!.length) {
-      userAnswer.add(choices[index]);
+    String selected = choices[index];
+
+    int iUserAns = userAnswer.indexOf(' ');
+    if (iUserAns > -1) {
+      userAnswer[iUserAns] = selected;
       choices.removeAt(index);
       hintCount++;
       print(index);
@@ -40,14 +43,11 @@ class GameScreenProvider extends ChangeNotifier {
     }
   }
 
-
-
   void answerChecker() {
-    if (_answer!.length == userAnswer.length) {
+    if (userAnswer.where((val) => val == ' ').isEmpty) {
       if (_answer!.join() == userAnswer.join()) {
         _correct = true;
         print("Correct");
-        userAnswer = [];
         int stage = getStageFromStorage() + 1;
         int coins = getCoinsFromStorage() + 20;
         print(StorageUtil.putInt('stage', stage));
@@ -64,9 +64,9 @@ class GameScreenProvider extends ChangeNotifier {
   }
 
   void removeAnswer(int index) {
-    if (userAnswer.length > index) {
+    if (userAnswer[index] != ' ') {
       choices.add(userAnswer[index]);
-      userAnswer.removeAt(index);
+      userAnswer[index] = ' ';
       hintCount--;
       print('removed');
       notifyListeners();
@@ -83,8 +83,10 @@ class GameScreenProvider extends ChangeNotifier {
     if (index < questions.length) {
       Question question = questions[index];
       _answer = question.answer;
+      userAnswer = List.filled(_answer!.length, ' ');
+      print(userAnswer);
+      print(userAnswer.length);
       generateChoices();
-      userAnswer = [];
       hintCount = 0;
     } else {
       isFinish = true;
@@ -131,10 +133,11 @@ class GameScreenProvider extends ChangeNotifier {
   int hintCount = 0;
 
   void hint() {
-    if (hintCount < _answer!.length) {
-      String charAns = _answer![hintCount];
-      userAnswer.add(charAns);
-      choices.remove(charAns);
+    int index = userAnswer.indexOf(' ');
+
+    if (index >= 0) {
+      userAnswer[index] = _answer![index];
+      choices.remove(userAnswer[index]);
       int coins = getCoinsFromStorage() - 20;
       print(StorageUtil.putInt('coins', coins));
       _coins = coins;

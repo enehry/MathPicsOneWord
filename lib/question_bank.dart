@@ -11,19 +11,19 @@ List<Question> questions = [
     answer: "TURTLE".split(''),
   ),
   Question(
-    answer: "WALANG BEBE".split(''),
+    answer: "WALANG_BEBE".split(''),
   ),
   Question(
     answer: "KULOT".split(''),
   ),
   Question(
-    answer: "BEBE NI OKKEN".split(''),
+    answer: "BEBE_NI_OKKEN".split(''),
   ),
   Question(
-    answer: "BEST SUPPORT".split(''),
+    answer: "BEST_SUPPORT".split(''),
   ),
   Question(
-    answer: "SHADOW NIGGA".split(''),
+    answer: "SHADOW_NIGGA".split(''),
   ),
   Question(
     answer: "DINOGTAG".split(''),
