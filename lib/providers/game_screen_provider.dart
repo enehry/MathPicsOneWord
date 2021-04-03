@@ -18,7 +18,10 @@ class GameScreenProvider extends ChangeNotifier {
   GameScreenProvider() {
     _stage = getStageFromStorage();
     _coins = getCoinsFromStorage();
+    questions
+        .sort((curr, next) => curr.answer.length.compareTo(next.answer.length));
     setQuestion(_stage);
+    print(questions.length);
   }
 
   int getStageFromStorage() => StorageUtil.getInt('stage');

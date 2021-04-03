@@ -13,7 +13,6 @@ class AnswerWidget extends StatelessWidget {
       child: Consumer<GameScreenProvider>(builder: (context, provider, widget) {
         List<String> choice = provider.choices;
         List<String> userAnswer = provider.userAnswer;
-        List<String>? answer = provider.answer!;
 
         int ansLength = (userAnswer.length <= 8) ? userAnswer.length : 8;
 
@@ -64,7 +63,7 @@ class AnswerWidget extends StatelessWidget {
                               context: context,
                               builder: (builder) => DialogWidget(
                                 title: 'CORRECT',
-                                text: '+20 COINS \n You guess it Right',
+                                text: 'You guess it Right \n +20 COINS',
                                 image: 'assets/icons/coin.svg',
                                 onPressed: () {
                                   Navigator.pop(context);

@@ -2,30 +2,125 @@ import 'package:four_pics_one_word/question.dart';
 
 List<Question> questions = [
   Question(
-    answer: "JUMP".split(''),
+    answer: "ARC".split(''),
   ),
   Question(
-    answer: "LORD".split(''),
+    answer: "SEGMENT".split(''),
   ),
   Question(
-    answer: "TURTLE".split(''),
+    answer: "ANGLE".split(''),
   ),
   Question(
-    answer: "WALANG_BEBE".split(''),
+    answer: "NUMERATOR".split(''),
   ),
   Question(
-    answer: "KULOT".split(''),
+    answer: "DENOMINATOR".split(''),
   ),
   Question(
-    answer: "BEBE_NI_OKKEN".split(''),
+    answer: "DECREASE".split(''),
   ),
   Question(
-    answer: "BEST_SUPPORT".split(''),
+    answer: "BINARY".split(''),
   ),
   Question(
-    answer: "SHADOW_NIGGA".split(''),
+    answer: "CHORD".split(''),
   ),
   Question(
-    answer: "DINOGTAG".split(''),
+    answer: "CONSTANT".split(''),
+  ),
+  Question(
+    answer: "EXPONENT".split(''),
+  ),
+  Question(
+    answer: "EXPRESSION".split(''),
+  ),
+  Question(
+    answer: "FACTORIAL".split(''),
+  ),
+  Question(
+    answer: "FORMULA".split(''),
+  ),
+  Question(
+    answer: "FREQUENCY".split(''),
+  ),
+  Question(
+    answer: "FUNCTION".split(''),
+  ),
+  Question(
+    answer: "GRAPH".split(''),
+  ),
+  Question(
+    answer: "IMAGINARY_NUMBER".split(''),
+  ),
+  Question(
+    answer: "INFINITY".split(''),
+  ),
+  Question(
+    answer: "INTERSECTION".split(''),
+  ),
+  Question(
+    answer: "MATRIX".split(''),
+  ),
+  //21
+  Question(
+    answer: "SUPPLEMENTARY".split(''),
+  ),
+  Question(
+    answer: "RECIPROCAL".split(''),
+  ),
+  Question(
+    answer: "FACTORING".split(''),
+  ),
+  Question(
+    answer: "PERMUTATION".split(''),
+  ),
+  Question(
+    answer: "SUBTRACTION".split(''),
+  ),
+  Question(
+    answer: "SLOPE".split(''),
+  ),
+  Question(
+    answer: "ADDITION".split(''),
+  ),
+  Question(
+    answer: "REALTION".split(''),
+  ),
+  Question(
+    answer: "CONGRUENCE".split(''),
+  ),
+  Question(
+    answer: "PARALLEL".split(''),
+  ),
+  //31
+  Question(
+    answer: "REMAINDER".split(''),
+  ),
+  Question(
+    answer: "DESCENDING".split(''),
+  ),
+  Question(
+    answer: "ASCENDING".split(''),
+  ),
+  Question(
+    answer: "FRACTION".split(''),
+  ),
+  Question(
+    answer: "MANDELBROT_SET".split(''),
+  ),
+  Question(
+    answer: "NATURAL_NUMBER".split(''),
+  ),
+  Question(
+    answer: "NODE".split(''),
+  ),
+  Question(
+    answer: "ORIGIN".split(''),
+  ),
+  Question(
+    answer: "PARABOLA".split(''),
+  ),
+  Question(
+    answer: "PRISM".split(''),
   ),
 ];

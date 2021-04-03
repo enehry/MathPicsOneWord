@@ -17,6 +17,9 @@ class SmallButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double w = MediaQuery.of(context).size.width;
+    double h = MediaQuery.of(context).size.height;
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 2.0, vertical: 3.0),
       decoration: BoxDecoration(
@@ -35,7 +38,7 @@ class SmallButtonWidget extends StatelessWidget {
       ),
       child: AnimatedButton(
         shape: BoxShape.rectangle,
-        width: 45.0,
+        width: title != 'HINT' && (h + 100 < w && w <= 923) ? 35.0 : 45.0,
         height: 45.0,
         color: color,
         child: Text(title, style: Theme.of(context).textTheme.bodyText2),
