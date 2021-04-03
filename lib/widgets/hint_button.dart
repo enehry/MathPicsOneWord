@@ -12,10 +12,19 @@ class HintButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 30.0, top: 10.0),
+      padding: const EdgeInsets.only(left: 10.0, right: 30.0, top: 10.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          IconButton(
+              icon: Icon(
+                Icons.arrow_back_outlined,
+                color: Theme.of(context).accentColor,
+                size: 30.0,
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              }),
           SmallButtonWidget(
             title: 'HINT',
             onPressed: () {
@@ -44,7 +53,7 @@ class HintButton extends StatelessWidget {
                   context: context,
                   builder: (builder) => DialogWidget(
                     title: 'MESSAGE',
-                    text: 'You don\'t have not enough coins',
+                    text: 'You don\'t have enough coins',
                     image: 'assets/icons/warn.svg',
                     onPressed: () {
                       Navigator.pop(context);

@@ -41,6 +41,11 @@ class ThemeProvider with ChangeNotifier {
             color: Color(0xFFE0E0E0),
             fontFamily: 'RobotoSlab',
           ),
+          headline3: TextStyle(
+            fontSize: 20.0,
+            color: Colors.white,
+            fontWeight: FontWeight.w300,
+          ),
           bodyText1: TextStyle(
             fontSize: 14.0,
             color: Color(0xFFE0E0E0),
@@ -73,6 +78,11 @@ class ThemeProvider with ChangeNotifier {
             fontSize: 24.0,
             color: Colors.white,
             fontFamily: 'RobotoSlab',
+          ),
+          headline3: TextStyle(
+            fontSize: 20.0,
+            color: Colors.white,
+            fontWeight: FontWeight.w300,
           ),
           bodyText1: TextStyle(
             fontSize: 14.0,

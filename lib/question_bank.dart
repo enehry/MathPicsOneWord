@@ -84,7 +84,7 @@ List<Question> questions = [
     answer: "ADDITION".split(''),
   ),
   Question(
-    answer: "REALTION".split(''),
+    answer: "RELATION".split(''),
   ),
   Question(
     answer: "CONGRUENCE".split(''),
