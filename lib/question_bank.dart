@@ -176,4 +176,44 @@ List<Question> questions = [
   Question(
     answer: "PROBLEM".split(''),
   ),
+  Question(
+    answer: "ASYMMETRY".split(''),
+  ),
+  Question(
+    answer: "BISECTOR".split(''),
+  ),
+  Question(
+    answer: "CLOCKWISE".split(''),
+  ),
+  // 61
+  Question(
+    answer: "CORRELATION".split(''),
+  ),
+  Question(
+    answer: "COUNTERCLOCKWISE".split(''),
+  ),
+  Question(
+    answer: "DISTRIBUTIVE".split(''),
+  ),
+  Question(
+    answer: "DIVISION".split(''),
+  ),
+  Question(
+    answer: "INFINITE".split(''),
+  ),
+  Question(
+    answer: "INTEGER".split(''),
+  ),
+  Question(
+    answer: "PERPENDICULAR".split(''),
+  ),
+  Question(
+    answer: "POLYGON".split(''),
+  ),
+  Question(
+    answer: "SQUARE".split(''),
+  ),
+  Question(
+    answer: "SYMMETRY".split(''),
+  ),
 ];

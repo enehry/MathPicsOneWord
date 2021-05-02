@@ -61,6 +61,55 @@ class AboutScreen extends StatelessWidget {
                 'v$version($buildNumber)',
                 style: Theme.of(context).textTheme.headline3,
               ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30.0),
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxWidth: 400.0,
+                  ),
+                  child: Card(
+                    elevation: 20.0,
+                    color: Theme.of(context).accentColor,
+                    child: Container(
+                      width: double.infinity,
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 60.0,
+                          ),
+                          Text(
+                            'Project of',
+                            style: TextStyle(fontWeight: FontWeight.w300),
+                          ),
+                          Text(
+                            'Mariclete A. Patron',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500, fontSize: 20.0),
+                          ),
+                          Text(
+                            'Farhana M. Pendatu',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500, fontSize: 20.0),
+                          ),
+                          Text(
+                            'Charlotte C. Roderos',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500, fontSize: 20.0),
+                          ),
+                          Text(
+                            'Marilyn P. Simon',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500, fontSize: 20.0),
+                          ),
+                          SizedBox(
+                            height: 50.0,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               SizedBox(
                 height: 70.0,
               ),
