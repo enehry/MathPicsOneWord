@@ -110,6 +110,9 @@ class AboutScreen extends StatelessWidget {
                                           'https://www.facebook.com/nehry.08/');
                                     },
                                   ),
+                                  SizedBox(
+                                    width: 5.0,
+                                  ),
                                   SignInButton(
                                     Buttons.GitHub,
                                     shape: RoundedRectangleBorder(
@@ -120,6 +123,9 @@ class AboutScreen extends StatelessWidget {
                                     onPressed: () {
                                       _launchURL('https://github.com/enehry');
                                     },
+                                  ),
+                                  SizedBox(
+                                    width: 5.0,
                                   ),
                                   SignInButton(
                                     Buttons.Email,

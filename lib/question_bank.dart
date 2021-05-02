@@ -123,4 +123,57 @@ List<Question> questions = [
   Question(
     answer: "PRISM".split(''),
   ),
+  //41
+  Question(
+    answer: "PROBABILITY".split(''),
+  ),
+  Question(
+    answer: "CHORDS".split(''),
+  ),
+  Question(
+    answer: "EQUATION".split(''),
+  ),
+  Question(
+    answer: "RATIOS".split(''),
+  ),
+  Question(
+    answer: "PERCENTAGE".split(''),
+  ),
+  Question(
+    answer: "CUBE".split(''),
+  ),
+  Question(
+    answer: "COMPASS".split(''),
+  ),
+  Question(
+    answer: "RADIUS".split(''),
+  ),
+  Question(
+    answer: "EQUIANGULAR".split(''),
+  ),
+  Question(
+    answer: "SET".split(''),
+  ),
+  //51
+  Question(
+    answer: "SUBSTITUTION".split(''),
+  ),
+  Question(
+    answer: "INTERSECTING".split(''),
+  ),
+  Question(
+    answer: "REDUCING".split(''),
+  ),
+  Question(
+    answer: "DISTANCE".split(''),
+  ),
+  Question(
+    answer: "AVERAGE".split(''),
+  ),
+  Question(
+    answer: "UNION".split(''),
+  ),
+  Question(
+    answer: "PROBLEM".split(''),
+  ),
 ];

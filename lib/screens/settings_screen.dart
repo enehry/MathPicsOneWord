@@ -11,6 +11,11 @@ class SettingsScreen extends StatelessWidget {
         context.read<ThemeProvider>().themeFromStorage == 0 ? 'OFF' : 'ON';
 
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white70),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -7,7 +7,7 @@ import 'package:four_pics_one_word/screens/settings_screen.dart';
 import 'package:four_pics_one_word/widgets/dialog_widget.dart';
 import 'package:four_pics_one_word/widgets/long_button_wdiget.dart';
 import 'package:provider/provider.dart';
-import 'package:package_info/package_info.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
