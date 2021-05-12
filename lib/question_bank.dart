@@ -128,7 +128,7 @@ List<Question> questions = [
     answer: "PROBABILITY".split(''),
   ),
   Question(
-    answer: "CHORDS".split(''),
+    answer: "PARALLELOGRAM".split(''),
   ),
   Question(
     answer: "EQUATION".split(''),
